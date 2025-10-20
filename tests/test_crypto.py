@@ -1,5 +1,5 @@
 import unittest
-from crypto import crypt
+from crypto import crypt, decrypt
 
 class TestCrypto(unittest.TestCase):
     def test_crypt_pas_1_sans_suffixe(self):
