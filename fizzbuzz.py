@@ -1,6 +1,6 @@
-def affiche() -> str:
+def affiche(n: int = 100) -> str:
     s = ""
-    for i in range(1, 101):
+    for i in range(1, n + 1):
         if i % 15 == 0:
             s += "FrisBee"
         elif i % 3 == 0:
