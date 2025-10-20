@@ -10,5 +10,16 @@ class TestCrypto(unittest.TestCase):
         # B) crypt(message, pas)
         self.assertEqual(crypt("abc", 3), "def3")
 
+    def test_decrypt_inverse_crypt(self):
+        # crypt avec pas=2 ajoute le suffixe "2"
+        chiffré = crypt("Hello!", 2)
+        self.assertEqual(decrypt(chiffré), "Hello!")
+
+    def test_decrypt_wrap(self):
+        # vérifie le wrap-around aux extrémités de la table
+        c = "~"              
+        chiffré = crypt(c, 3)
+        self.assertEqual(decrypt(chiffré), c)
+
 if __name__ == "__main__":
     unittest.main()
